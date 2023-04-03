@@ -11,22 +11,16 @@
     "lint": "node ./node_modules/.bin/eslint './src/**/*.ts'",
     "lintfix": "node ./node_modules/.bin/eslint './src/**/*.ts' --fix"
   },
+  "dependencies": {
+    "ts-node": "10.9.1"
+  },
   "devDependencies": {
     "@types/node": "18.15.11",
-    "typescript": "5.0.3",
     "@typescript-eslint/eslint-plugin": "5.57.0",
     "@typescript-eslint/parser": "5.57.0",
     "eslint": "8.37.0",
-    "prettier": "2.8.7"
-  },
-  "eslintConfig": {
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-      "ecmaVersion": "latest",
-      "sourceType": "module"
-    },
-    "plugins": [
-      "@typescript-eslint"
-    ]
+    "nodemon": "2.0.22",
+    "prettier": "2.8.7",
+    "typescript": "5.0.3"
   }
 }

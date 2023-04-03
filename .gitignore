@@ -3,4 +3,4 @@ database/db
 database/configdb
 !database/db/.gitkeep
 !database/configdb/.gitkeep
-
+node_modules
