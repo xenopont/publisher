@@ -4,14 +4,23 @@
     "publisher-dev-mongo": {
       "container_name": "publisher-dev-mongo",
       "image": "mongo:6-jammy",
-      "ports": [ "27017:27017" ],
-      "volumes": [ "../database:/srv/database" ]
+      "ports": [
+        "27017:27017"
+      ],
+      "volumes": [
+        "../database/configdb:/data/configdb",
+        "../database/db:/data/db"
+      ]
     },
     "publisher-dev-api": {
       "container_name": "publisher-dev-api",
       "image": "publisher-dev-api-image",
-      "ports": [ "9091:3000" ],
-      "volumes": [ "../api:/srv/api" ]
+      "ports": [
+        "9091:3000"
+      ],
+      "volumes": [
+        "../api:/srv/api"
+      ]
     }
   }
 }

@@ -1,3 +1,6 @@
-/.idea
-./database
-!./database/.gitkeep
+.idea
+database/db
+database/configdb
+!database/db/.gitkeep
+!database/configdb/.gitkeep
+
