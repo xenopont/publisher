@@ -28,6 +28,7 @@ module.exports = {
     "import/order": [
       "error",
       {
+        alphabetize: { order: "asc", caseInsensitive: true },
         groups: [
           "builtin",
           "external",
@@ -38,6 +39,7 @@ module.exports = {
           "type",
         ],
         "newlines-between": "always",
+        warnOnUnassignedImports: true,
       },
     ],
     "unicorn/prefer-node-protocol": ["error"],
