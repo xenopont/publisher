@@ -1,5 +1,5 @@
-import type { ServerResponse } from "node:http";
+import type { RequestHandler } from "express";
 
-export const heartbeat = (response: ServerResponse) => {
+export const heartbeat: RequestHandler = (request, response) => {
   response.writeHead(204).end();
 };
