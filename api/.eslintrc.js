@@ -8,6 +8,8 @@ module.exports = {
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
     "plugin:unicorn/recommended",
   ],
   ignorePatterns: ["./node_modules/"],
@@ -19,8 +21,37 @@ module.exports = {
     project: "./tsconfig.json",
     createDefaultProgram: true,
   },
-  plugins: ["@typescript-eslint", "unicorn"],
+  plugins: ["@typescript-eslint", "import", "unicorn"],
   rules: {
-    //
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": ["error"],
+    "import/order": [
+      "error",
+      {
+        alphabetize: { order: "asc", caseInsensitive: true },
+        groups: [
+          "builtin",
+          "external",
+          "parent",
+          "sibling",
+          "index",
+          "object",
+          "type",
+        ],
+        "newlines-between": "always",
+        warnOnUnassignedImports: true,
+      },
+    ],
+    "unicorn/prefer-node-protocol": ["error"],
+  },
+  settings: {
+    "import/parsers": {
+      "@typescript-eslint/parser": ["*.ts"],
+    },
+    "import/resolver": {
+      typescript: {
+        alwaysTryTypes: true,
+      },
+    },
   },
 };

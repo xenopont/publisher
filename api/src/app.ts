@@ -1,9 +1,15 @@
-import * as http from "node:http";
+import * as express from "express";
+
+import { graphql } from "./graphql";
+import { heartbeat } from "./heartbeat";
 
 const port = process.env.port || 3000;
-http
-  .createServer(function (request, response) {
-    response.writeHead(200, { "Content-Type": "text/plain" });
-    response.end("Hello World\n");
-  })
-  .listen(port);
+
+const app = express();
+
+app.use(express.json({ strict: false }));
+
+app.use("/heartbeat", heartbeat);
+app.use("/graphql", graphql);
+
+app.listen(port);
